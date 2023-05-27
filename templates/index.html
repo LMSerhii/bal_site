@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ context.title }}{% endblock title %}
+
+{% block content %}
+<h1 style="margin-top:100px;">{{ context.title }}</h1>
+<img src="{{ url_for('static', filename='img/skull.jpg') }}" alt="">
+{% endblock content %}

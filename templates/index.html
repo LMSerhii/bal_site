@@ -3,6 +3,27 @@
 {% block title %}{{ context.title }}{% endblock title %}
 
 {% block content %}
-<h1 style="margin-top:100px;">{{ context.title }}</h1>
-<img src="{{ url_for('static', filename='img/skull.jpg') }}" alt="">
+<div class="container-fluid">
+    <h1 style="margin-top:100px;">{{ context.title }}</h1>
+    <img src="{{ url_for('static', filename='img/refactor.jpg') }}" alt="" class="img-fluid">
+    <div class="container">
+        <div class="row">
+            {% for post in context.posts %}
+            <div class="col-3" style="margin:10px;">
+                <div class="card" style="width: 18rem;">
+                    <img src="{{ url_for('static', filename='img/skull.jpg') }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ post.post_title }}</h5>
+                        <p class="card-text">{{ post.text[:50] }}...</p>
+                        <a href="{{ url_for('show_post', post_id=post.id) }}" class="btn btn-primary">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+
 {% endblock content %}

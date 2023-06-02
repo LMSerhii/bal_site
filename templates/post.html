@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{ super() }}
+<div class="container" style="margin-top:100px;">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="h-100 p-5 text-bg-dark rounded-3">
+                <h2>{{ context.post_title}}</h2>
+                <p>{{ context.post_text }}</p>
+                <button class="btn btn-outline-light" type="button">Редактировать</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

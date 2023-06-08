@@ -152,7 +152,7 @@ def profile(username):
     db = get_db()
     dbase = FDataBase(db)
     if 'userLogged' not in session or session['userLogged'] != username:
-        abort(404)
+        abort(401)
     return f'Пользователь {username}'
 
 

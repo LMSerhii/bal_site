@@ -6,9 +6,14 @@
     <div class="row">
         <div class="col-md-12">
             <div class="h-100 p-5 text-bg-dark rounded-3">
-                <h2>{{ context.post_title}}</h2>
-                <p>{{ context.post_text }}</p>
-                <button class="btn btn-outline-light" type="button">Редактировать</button>
+                <h2>{{ post_title}}</h2>
+                <p>{{ post_text }}</p>
+                <form action="" method="post">
+                    <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                        <button class="btn btn-outline-light" type="button">Редактировать</button>
+                        <button class="btn btn-outline-light" name="del_post" type="submit">Удалить</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

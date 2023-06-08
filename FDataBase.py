@@ -8,7 +8,7 @@ class FDataBase:
         self.__db = db
         self.__cur = db.cursor()
 
-    def get_menu(self):
+    def getMenu(self):
         sql = """SELECT * FROM mainmenu"""
         try:
             self.__cur.execute(sql)
@@ -52,4 +52,11 @@ class FDataBase:
             print(ex, "Ошибка чтения из БД")
 
         return []
+
+    def delPost(self, post_id):
+        try:
+            self.__cur.execute(f'DELETE FROM posts WHERE id={post_id}')
+            self.__cur.commit()
+        except sqlite3.Error as ex:
+            print(ex, "Ошибка БД")
 
